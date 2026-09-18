@@ -23,3 +23,26 @@ def cadastrar_funcionarios():
                 print("Entrada inválida. O salário deve ser um valor numérico.")
 
     return funcionarios
+
+
+#Função que recebe uma lista com nome e salario e retorna uma nova lista com os salarios reajustados e o total de aumento.
+def reajuste_salarial(lista_funcionarios):
+    funcionarios_atualizado = []
+    total_antigo = 0
+    total_novo = 0
+
+    for nome, salario in lista_funcionarios:
+        total_antigo += salario
+
+        if salario <= 2000.00:
+            novo_salario = salario * 1.2
+        elif salario <5000.00:
+            novo_salario = salario * 1.15
+        else:
+            novo_salario = salario * 1.05
+
+        total_novo += novo_salario
+        funcionarios_atualizado.append((nome, novo_salario))
+
+    total_aumento = total_novo - total_antigo
+    return funcionarios_atualizado, total_aumento
