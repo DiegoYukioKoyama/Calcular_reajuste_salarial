@@ -1,0 +1,12 @@
+# Cache do Python (arquivos compilados pelo próprio Python)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Configurações do VS Code
+.vscode/
+
+# Ambientes virtuais
+venv/
+.venv/
+env/
